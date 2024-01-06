@@ -1,3 +1,4 @@
+import sys
 choice ="""
 choisissez parmi les 5 options suivantes:
 1: Ajouter un élément à la liste de courses
@@ -7,8 +8,21 @@ choisissez parmi les 5 options suivantes:
 5: Quitter le programme
 👉 Votre choix :
 """
-print(choice)
 
+selection = 0
+shoplist =[]
+while selection != 5:
+    selection = int(input(choice))
+    if selection == 1:
+        item= input("Entrez le noom de l'élément à ajouter à la liste de course : ")
+        shoplist.append(item)
+        print(f"L'élément {item} a bien été ajouté à la liste")
+    elif selection == 2:
+        print('ok 2')
+    
+else:
+    print("À bientôt !")
+    sys.exit()
 # choisi dans la liste avec le numéro
 
 # choix 1
