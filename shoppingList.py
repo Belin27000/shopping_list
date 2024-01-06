@@ -18,7 +18,11 @@ while selection != 5:
         shoplist.append(item)
         print(f"L'élément {item} a bien été ajouté à la liste")
     elif selection == 2:
-        print('ok 2')
+        item= input("Entrez le nom d'un élément à retirer de la liste de course : ")
+        shoplist.remove(item)
+        print(f"L'élément {item} a bien été supprimé de la liste")
+        print(shoplist)
+
     
 else:
     print("À bientôt !")
@@ -26,7 +30,7 @@ else:
 # choisi dans la liste avec le numéro
 
 # choix 1
-# --> "Entrez le noom de l'élément à ajouter à la liste de course : "
+# --> "Entrez le nom de l'élément à ajouter à la liste de course : "
 # donne le nom que tu veux exemple: X
 # --> "L'élément X a bien été ajouté à la liste"
 # Affiche la liste de choix
