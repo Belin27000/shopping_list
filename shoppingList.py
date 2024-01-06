@@ -19,9 +19,19 @@ while selection != 5:
         print(f"L'élément {item} a bien été ajouté à la liste")
     elif selection == 2:
         item= input("Entrez le nom d'un élément à retirer de la liste de course : ")
-        shoplist.remove(item)
-        print(f"L'élément {item} a bien été supprimé de la liste")
-        print(shoplist)
+        # print(shoplist)
+        for eachitem in shoplist:
+            if eachitem == item:
+                item_index=shoplist.index(item)
+                shoplist.pop(item_index)
+                print(f"L'élément {item} a bien été supprimé de la liste")
+                break
+        else:
+            print(f"L'élément {item} n'est pas dans la liste")
+
+        # shoplist.remove(item)
+        # print(f"L'élément {item} a bien été supprimé de la liste")
+        # print(shoplist)
 
     
 else:
@@ -29,20 +39,20 @@ else:
     sys.exit()
 # choisi dans la liste avec le numéro
 
-# choix 1
+# choix 1 - OK
 # --> "Entrez le nom de l'élément à ajouter à la liste de course : "
 # donne le nom que tu veux exemple: X
 # --> "L'élément X a bien été ajouté à la liste"
 # Affiche la liste de choix
 
-# choix 2
+# choix 2 - OK
 # --> "Entrez le nom d'un élément à retirer de la liste de course : "
 # donne le nom que tu veux exemple: X
 # --> "L'élément X a bien été supprimé de la liste"
 # Affiche la liste de choix
 #
 #
-# on selectionne de nouveau le chiffre 2
+# on selectionne de nouveau le chiffre 2 - OK
 # --> "Entrez le nom d'un élément à retirer de la liste de course : "
 # essaye de supprimer un élément déjà supprimé
 # --> "L'élément X n'est pas dans la liste"
@@ -57,6 +67,6 @@ else:
 # --> "La liste a été vidée de son contenu"
 # Affiche la liste de choix
 
-# choix 5
+# choix 5 - OK
 # -->"À bientôt"
 # quitte le programme
