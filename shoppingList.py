@@ -1,5 +1,5 @@
 import sys
-choice ="""
+CHOICE ="""
 choisissez parmi les 5 options suivantes:
 1: Ajouter un élément à la liste de courses
 2: Retirer un élément de la liste de courses
@@ -9,15 +9,15 @@ choisissez parmi les 5 options suivantes:
 👉 Votre choix :
 """
 
-selection = 0
+SELECTION = 0
 shoplist =[]
-while selection != 5:
-    selection = int(input(choice))
-    if selection == 1:
+while SELECTION != 5:
+    SELECTION = int(input(CHOICE))
+    if SELECTION == 1: # Ajouter un élément
         item= input("Entrez le noom de l'élément à ajouter à la liste de course : ")
         shoplist.append(item)
         print(f"L'élément {item} a bien été ajouté à la liste")
-    elif selection == 2:
+    elif SELECTION == 2: # Retirer un élément
         item= input("Entrez le nom d'un élément à retirer de la liste de course : ")
         for eachitem in shoplist:
             if eachitem == item:
@@ -27,11 +27,11 @@ while selection != 5:
                 break
         else:
             print(f"L'élément {item} n'est pas dans la liste")
-    elif selection == 3:
+    elif SELECTION == 3: # Afficher la liste
         print("Voici le contenu de votre liste : ")
         for i,eachitem in enumerate(shoplist):
             print(f"{i+1}.{eachitem}")
-    elif selection == 4:
+    elif SELECTION == 4: # Vider la liste
         shoplist.clear()
         print("La liste a été vidée de son contenu")
 else:
@@ -52,7 +52,7 @@ else:
 # Affiche la liste de choix
 #
 #
-# on selectionne de nouveau le chiffre 2 - OK
+# on SELECTIONne de nouveau le chiffre 2 - OK
 # --> "Entrez le nom d'un élément à retirer de la liste de course : "
 # essaye de supprimer un élément déjà supprimé
 # --> "L'élément X n'est pas dans la liste"
