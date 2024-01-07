@@ -19,7 +19,6 @@ while selection != 5:
         print(f"L'élément {item} a bien été ajouté à la liste")
     elif selection == 2:
         item= input("Entrez le nom d'un élément à retirer de la liste de course : ")
-        # print(shoplist)
         for eachitem in shoplist:
             if eachitem == item:
                 item_index=shoplist.index(item)
@@ -28,12 +27,13 @@ while selection != 5:
                 break
         else:
             print(f"L'élément {item} n'est pas dans la liste")
-
-        # shoplist.remove(item)
-        # print(f"L'élément {item} a bien été supprimé de la liste")
-        # print(shoplist)
-
-    
+    elif selection == 3:
+        print("Voici le contenu de votre liste : ")
+        for i,eachitem in enumerate(shoplist):
+            print(f"{i+1}.{eachitem}")
+    elif selection == 4:
+        shoplist.clear()
+        print("La liste a été vidée de son contenu")
 else:
     print("À bientôt !")
     sys.exit()
