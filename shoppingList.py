@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 choice ="""
 choisissez parmi les 5 options suivantes:
 1: Ajouter un élément à la liste de courses
@@ -19,12 +20,20 @@ if not CHECK_FILE:
 
 CUR_DIR=os.path.dirname(__file__)
 CUR_FILE = os.path.join(CUR_DIR,"liste.json")
-print(CUR_FILE)
+# print(CUR_FILE)
+
+
+
 while selection != 5:
+    with open(CUR_FILE,"r") as f:
+        shoplist=json.load(f)
+        print(shoplist)
     selection = int(input(choice))
     if selection == 1: # Ajouter un élément
         item= input("Entrez le noom de l'élément à ajouter à la liste de course : ")
         shoplist.append(item)
+        with open(CUR_FILE, "w") as f:
+            json.dump(shoplist,f,indent=4)
         print(f"L'élément {item} a bien été ajouté à la liste")
     elif selection == 2: # Retirer un élément
         item= input("Entrez le nom d'un élément à retirer de la liste de course : ")
@@ -42,6 +51,9 @@ while selection != 5:
             print(f"{i+1}.{eachitem}")
     elif selection == 4:
         shoplist.clear()
+        with open(CUR_FILE, "w") as f:
+            json.dump(shoplist,f,indent=4)
+        print(shoplist)
         print("La liste a été vidée de son contenu")
 else:
     print("À bientôt !")
