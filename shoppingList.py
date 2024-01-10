@@ -1,4 +1,5 @@
 import sys
+import os
 choice ="""
 choisissez parmi les 5 options suivantes:
 1: Ajouter un élément à la liste de courses
@@ -11,6 +12,14 @@ choisissez parmi les 5 options suivantes:
 
 selection = 0
 shoplist =[]
+CHECK_FILE = os.path.exists("liste.json")
+if not CHECK_FILE:
+    with open("liste.json","x") as shoplist:
+        shoplist.write("[]")
+
+CUR_DIR=os.path.dirname(__file__)
+CUR_FILE = os.path.join(CUR_DIR,"liste.json")
+print(CUR_FILE)
 while selection != 5:
     selection = int(input(choice))
     if selection == 1: # Ajouter un élément

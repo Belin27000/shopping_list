@@ -1,4 +1,3 @@
-
 # choisi dans la liste avec le numéro
 
 # choix 1 - OK
@@ -32,3 +31,5 @@
 # choix 5 - OK
 # -->"À bientôt"
 # quitte le programme
+Bonjour
+Au revoir
