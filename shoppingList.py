@@ -27,7 +27,6 @@ CUR_FILE = os.path.join(CUR_DIR,"liste.json")
 while selection != 5:
     with open(CUR_FILE,"r") as f:
         shoplist=json.load(f)
-        print(shoplist)
     selection = int(input(choice))
     if selection == 1: # Ajouter un élément
         item= input("Entrez le noom de l'élément à ajouter à la liste de course : ")
@@ -41,6 +40,8 @@ while selection != 5:
             if eachitem == item:
                 item_index=shoplist.index(item)
                 shoplist.pop(item_index)
+                with open(CUR_FILE, "w") as f:
+                     json.dump(shoplist,f,indent=4)
                 print(f"L'élément {item} a bien été supprimé de la liste")
                 break
         else:
@@ -53,8 +54,9 @@ while selection != 5:
         shoplist.clear()
         with open(CUR_FILE, "w") as f:
             json.dump(shoplist,f,indent=4)
-        print(shoplist)
         print("La liste a été vidée de son contenu")
 else:
+    with open(CUR_FILE, "w") as f:
+        json.dump(shoplist,f,indent=4)
     print("À bientôt !")
     sys.exit()
